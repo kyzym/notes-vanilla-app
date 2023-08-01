@@ -1,0 +1,40 @@
+.notes-list {
+  font-size: 10px;
+}
+
+.note-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aliceblue;
+  margin-bottom: 0.5rem;
+  border-radius: 2px;
+  padding: 1rem;
+  column-gap: 1rem;
+  max-height: fit-content;
+}
+
+.note-content {
+  flex-basis: 18%;
+}
+
+.note-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.note-name-icon-wrapper {
+  background-color: gray;
+  border-radius: 50%;
+  min-width: 4rem;
+  min-height: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.note-actions {
+  flex-basis: 10%;
+}

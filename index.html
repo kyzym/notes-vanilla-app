@@ -14,6 +14,45 @@
       referrerpolicy="no-referrer" />
   </head>
   <body>
-    <h1>Let's do it!</h1>
+    <div class="container">
+      <div class="notes-table">
+        <ul class="table-header">
+          <li class="table-header__item">Name</li>
+          <li class="table-header__item">Created</li>
+          <li class="table-header__item">Category</li>
+          <li class="table-header__item">Content</li>
+          <li class="table-header__item">Dates</li>
+          <li class="table-header__item">
+            <img
+              class="icon"
+              src="img/archive.svg"
+              alt="Archive icon"
+              width="25"
+              height="25" />
+            <img
+              class="icon"
+              src="img/trash.svg"
+              alt="Trash icon"
+              width="25"
+              height="25" />
+          </li>
+        </ul>
+        <ul class="notes-list">
+          <!-- Todo -->
+        </ul>
+        <button class="create-note-btn">Create Note</button>
+      </div>
+
+      <div class="archived-notes-table">
+        <ul class="archived-table-header">
+          <li class="archived-table-header__item">Note Category</li>
+          <li class="archived-table-header__item">Active</li>
+          <li class="archived-table-header__item">Archived</li>
+        </ul>
+        <ul class="archived-notes-list">
+          <!-- Archived notes -->
+        </ul>
+      </div>
+    </div>
   </body>
 </html>

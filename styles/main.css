@@ -1,1 +1,4 @@
-
+@import './reset/reset.css';
+@import './base/base.css';
+@import './table/tableHeaders.css';
+@import './table/todoTable.css';
