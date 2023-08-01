@@ -1,8 +1,17 @@
 import { getIconName } from './utils/getIconName.js';
 
+const categories = ['Task', 'Random Thought', 'Idea'];
+
 export const renderSummaryTable = (counts) => {
-  for (let category in counts) {
+  const summaryList = document.querySelector('.summary-notes-list');
+
+  summaryList.innerHTML = '';
+
+  categories.forEach((category) => {
+    if (!counts.hasOwnProperty(category)) return;
+
     const noteItem = document.createElement('li');
+
     noteItem.classList.add('summary-list-item');
 
     const noteContent = `
@@ -22,6 +31,6 @@ export const renderSummaryTable = (counts) => {
     `;
 
     noteItem.insertAdjacentHTML('beforeend', noteContent);
-    document.querySelector('.summary-notes-list').append(noteItem);
-  }
+    summaryList.append(noteItem);
+  });
 };
