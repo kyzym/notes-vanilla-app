@@ -1,12 +1,18 @@
 .notes-table,
-.archived-notes-table {
+.summary-notes-table {
   margin-bottom: 64px;
   font-size: 24px;
   font-weight: bold;
 }
 
-.table-header,
-.archived-table-header {
+.table-header {
+  margin-bottom: 16px;
+  background-color: gray;
+  border-radius: 4px;
+  padding: 8px 8px 8px 8px;
+  color: white;
+}
+.summary-table-header {
   margin-bottom: 16px;
   background-color: gray;
   border-radius: 4px;
@@ -15,7 +21,7 @@
 }
 
 .table-header,
-.archived-table-header {
+.summary-table-header {
   display: flex;
   gap: 16px;
   justify-content: space-between;

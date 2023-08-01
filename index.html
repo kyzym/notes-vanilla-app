@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo!</title>
+    <title>Notes!</title>
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <script type="module" src="js/index.js" defer></script>
     <link
@@ -43,16 +43,33 @@
         <button class="create-note-btn">Create Note</button>
       </div>
 
-      <div class="archived-notes-table">
-        <ul class="archived-table-header">
-          <li class="archived-table-header__item">Note Category</li>
-          <li class="archived-table-header__item">Active</li>
-          <li class="archived-table-header__item">Archived</li>
+      <div class="summary-notes-table">
+        <ul class="summary-table-header">
+          <li class="summary-table-header__item">Note Category</li>
+          <li class="summary-table-header__item">Active</li>
+          <li class="summary-table-header__item">Archived</li>
         </ul>
-        <ul class="archived-notes-list">
+        <ul class="summary-notes-list">
           <!-- Archived notes -->
         </ul>
       </div>
+
+      <form class="note-form">
+        <input type="text" name="name" placeholder="Note name" required />
+        <input
+          type="textarea"
+          name="content"
+          size="5"
+          placeholder="Note content"
+          required />
+        <select name="category" required>
+          <option value="">Choose a category</option>
+          <option value="Task">Task</option>
+          <option value="Random Thought">Random Thought</option>
+          <option value="Idea">Idea</option>
+        </select>
+        <button type="submit">Add note</button>
+      </form>
     </div>
   </body>
 </html>

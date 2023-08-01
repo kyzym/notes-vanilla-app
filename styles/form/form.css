@@ -1,0 +1,23 @@
+.note-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  background-color: white;
+  padding: 1em;
+  border: 1px solid black;
+  width: 50%;
+  margin: auto;
+}
+
+.note-form input,
+.note-form select,
+.note-form button {
+  margin-top: 0.5em;
+  padding: 0.5em;
+  border: 1px solid grey;
+}
+
+.note-form button {
+  background-color: lightblue;
+  cursor: pointer;
+}

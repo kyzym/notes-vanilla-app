@@ -1,5 +1,9 @@
+import { getIconName } from './utils/getIconName.js';
+
 export const renderNotes = (notes) => {
   const notesList = document.querySelector('.notes-list');
+
+  notesList.innerHTML = '';
 
   notes.forEach((note) => {
     const noteItem = document.createElement('li');
@@ -8,7 +12,9 @@ export const renderNotes = (notes) => {
     const noteContent = `
       <div class="note-content note-name">
         <div class="note-name-icon-wrapper">
-          <img class="note-name-icon" src="img/cart.svg" alt="Note icon" width="25" height="25">
+          <img class="note-name-icon" src="img/${getIconName(
+            note.category
+          )}.svg" alt="Note icon" width="25" height="25">
         </div>
         <span>${note.name}</span>
       </div>
