@@ -2,14 +2,18 @@ import { fetchData } from '../api/fetchData.js';
 import { addNote } from './actions/addNote.js';
 import { archiveNote } from './actions/archiveNote.js';
 import { deleteNote } from './actions/deleteNote.js';
+import { editNote } from './actions/editNote.js';
 import { renderNotes } from './renderNotes.js';
 import { renderSummaryTable } from './renderSummaryTable.js';
-import { closeModal, handleBackdropClick, openModal } from './ui/modal.js';
+import { closeModal, openModal } from './ui/modal.js';
 import { countNotesByCategory } from './utils/countNotesByCategory.js';
+import { fillNoteForm } from './utils/fillNoteForm.js';
 import { filterActiveNotes } from './utils/filterActiveNotes.js';
+import { findNoteById } from './utils/findNoteById.js';
 import { groupNotesByCategory } from './utils/groupNotesByCategory.js';
 
 let notes = [];
+let editingNoteId = null;
 
 const updateNotes = (updatedNotes) => {
   notes = updatedNotes;
@@ -38,12 +42,19 @@ const init = async () => {
 };
 
 const noteForm = document.querySelector('.note-form');
+
 noteForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const formData = new FormData(e.target);
 
-  notes = addNote(notes, formData);
+  if (editingNoteId) {
+    notes = editNote(notes, editingNoteId, formData);
+    closeModal();
+  } else {
+    notes = addNote(notes, formData);
+  }
+
   updateNotes(notes);
 
   noteForm.reset();
@@ -64,6 +75,13 @@ notesList.addEventListener('click', (e) => {
     const updatedNotes = archiveNote(notes, noteId);
 
     updateNotes(updatedNotes);
+  } else if (e.target.closest('.note-edit')) {
+    editingNoteId = noteId;
+
+    const note = findNoteById(notes, editingNoteId);
+
+    fillNoteForm(note);
+    openModal();
   }
 });
 

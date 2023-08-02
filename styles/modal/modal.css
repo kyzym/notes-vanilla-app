@@ -8,6 +8,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+}
+
+.backdrop.isHidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .modal {
@@ -16,8 +26,4 @@
   border-radius: 10px;
   width: 700px;
   padding: 36px;
-}
-
-.isHidden {
-  display: none;
 }
