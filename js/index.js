@@ -1,12 +1,25 @@
 import { fetchData } from '../api/fetchData.js';
 import { addNote } from './actions/addNote.js';
+import { archiveNote } from './actions/archiveNote.js';
+import { deleteNote } from './actions/deleteNote.js';
 import { renderNotes } from './renderNotes.js';
 import { renderSummaryTable } from './renderSummaryTable.js';
-
 import { countNotesByCategory } from './utils/countNotesByCategory.js';
+import { filterActiveNotes } from './utils/filterActiveNotes.js';
 import { groupNotesByCategory } from './utils/groupNotesByCategory.js';
 
 let notes = [];
+
+const updateNotes = (updatedNotes) => {
+  notes = updatedNotes;
+  const activeNotes = filterActiveNotes(notes);
+  renderNotes(activeNotes);
+
+  const groupedData = groupNotesByCategory(notes);
+  const counts = countNotesByCategory(groupedData);
+
+  renderSummaryTable(counts);
+};
 
 const init = async () => {
   try {
@@ -30,13 +43,24 @@ noteForm.addEventListener('submit', (e) => {
   const formData = new FormData(e.target);
 
   notes = addNote(notes, formData);
-
-  renderNotes(notes);
-  const groupedData = groupNotesByCategory(notes);
-  const counts = countNotesByCategory(groupedData);
-  renderSummaryTable(counts);
+  updateNotes(notes);
 
   noteForm.reset();
+});
+
+const notesList = document.querySelector('.notes-list');
+
+notesList.addEventListener('click', (e) => {
+  const noteItem = e.target.closest('.note-list-item');
+  const noteId = noteItem.getAttribute('data-id');
+
+  if (e.target.closest('.note-delete')) {
+    const updatedNotes = deleteNote(notes, noteId);
+    updateNotes(updatedNotes);
+  } else if (e.target.closest('.note-archive')) {
+    const updatedNotes = archiveNote(notes, noteId);
+    updateNotes(updatedNotes);
+  }
 });
 
 init();

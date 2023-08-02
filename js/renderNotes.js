@@ -35,6 +35,7 @@ export const renderNotes = (notes) => {
       </div>
     `;
 
+    noteItem.setAttribute('data-id', note.id);
     noteItem.insertAdjacentHTML('beforeend', noteContent);
     notesList.append(noteItem);
   });
