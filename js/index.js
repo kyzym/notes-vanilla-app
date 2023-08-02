@@ -9,21 +9,45 @@ import { closeModal, openModal } from './ui/modal.js';
 import { countNotesByCategory } from './utils/countNotesByCategory.js';
 import { fillNoteForm } from './utils/fillNoteForm.js';
 import { filterActiveNotes } from './utils/filterActiveNotes.js';
+import { filterArchivedNotes } from './utils/filterArchivedNotes.js';
 import { findNoteById } from './utils/findNoteById.js';
 import { groupNotesByCategory } from './utils/groupNotesByCategory.js';
 
 let notes = [];
 let editingNoteId = null;
+let showArchived = false;
+
+const updateArchiveToggleText = () => {
+  const hasArchivedNotes = filterArchivedNotes(notes).length > 0;
+  const toggleTextElement = document.querySelector('.archive-toggle-text');
+
+  if (!hasArchivedNotes || !showArchived) {
+    toggleTextElement.textContent = hasArchivedNotes ? 'Show archive' : '';
+  } else {
+    toggleTextElement.textContent = 'Hide archive';
+  }
+};
 
 const updateNotes = (updatedNotes) => {
   notes = updatedNotes;
-  const activeNotes = filterActiveNotes(notes);
-  renderNotes(activeNotes);
+
+  const archivedNotes = filterArchivedNotes(notes);
+  if (archivedNotes.length === 0) {
+    showArchived = false;
+  }
+
+  const notesToRender = showArchived
+    ? filterArchivedNotes(notes)
+    : filterActiveNotes(notes);
+
+  renderNotes(notesToRender);
 
   const groupedData = groupNotesByCategory(notes);
   const counts = countNotesByCategory(groupedData);
 
   renderSummaryTable(counts);
+
+  updateArchiveToggleText();
 };
 
 const init = async () => {
@@ -88,5 +112,24 @@ notesList.addEventListener('click', (e) => {
 const createNoteBtn = document.querySelector('.create-note-btn');
 
 createNoteBtn.addEventListener('click', openModal);
+
+const toggleArchiveButton = document.querySelector('.toggle-archive-btn');
+
+const showArchivedNotes = () => {
+  const archivedNotes = filterArchivedNotes(notes);
+
+  if (archivedNotes.length === 0) {
+    showArchived = false;
+  } else {
+    showArchived = !showArchived;
+  }
+
+  const notesToRender = showArchived ? archivedNotes : filterActiveNotes(notes);
+  renderNotes(notesToRender);
+
+  updateArchiveToggleText();
+};
+
+toggleArchiveButton.addEventListener('click', showArchivedNotes);
 
 init();
