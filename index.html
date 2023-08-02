@@ -54,22 +54,27 @@
         </ul>
       </div>
 
-      <form class="note-form">
-        <input type="text" name="name" placeholder="Note name" required />
-        <input
-          type="textarea"
-          name="content"
-          size="5"
-          placeholder="Note content"
-          required />
-        <select name="category" required>
-          <option value="">Choose a category</option>
-          <option value="Task">Task</option>
-          <option value="Random Thought">Random Thought</option>
-          <option value="Idea">Idea</option>
-        </select>
-        <button type="submit">Add note</button>
-      </form>
+      <div class="backdrop isHidden">
+        <div class="modal">
+          <button class="close-modal-btn">Close</button>
+          <form class="note-form">
+            <input type="text" name="name" placeholder="Note name" required />
+            <input
+              type="textarea"
+              name="content"
+              size="5"
+              placeholder="Note content"
+              required />
+            <select name="category" required>
+              <option value="">Choose a category</option>
+              <option value="Task">Task</option>
+              <option value="Random Thought">Random Thought</option>
+              <option value="Idea">Idea</option>
+            </select>
+            <button type="submit">Add note</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
