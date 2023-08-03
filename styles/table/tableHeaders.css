@@ -1,0 +1,73 @@
+.notes-table {
+  margin-top: 2%;
+}
+
+.notes-table,
+.summary-notes-table {
+  margin-bottom: 6.4rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.table-header {
+  margin-bottom: 1.6rem;
+  background-color: gray;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  color: white;
+}
+
+.summary-table-header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  margin-bottom: 1.6rem;
+  background-color: gray;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  color: white;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.table-header-icons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+
+  flex-wrap: nowrap;
+  gap: 0.8rem;
+}
+
+.table-header-icons .ionicon {
+  width: 3rem;
+}
+
+.archive-toggle-text {
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
+.table-header__item:first-child {
+  margin-left: 4.5rem;
+}
+
+.archive-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.isHidden {
+  display: none;
+}

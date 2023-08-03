@@ -1,0 +1,22 @@
+.summary-notes-table {
+  margin-top: 10rem;
+}
+
+.summary-notes-list {
+  font-size: 1.4rem;
+}
+
+.summary-list-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  background-color: aliceblue;
+  margin-bottom: 0.5rem;
+  border-radius: 0.2rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.summary-table-header__item:first-child {
+  margin-left: 4.5rem;
+}

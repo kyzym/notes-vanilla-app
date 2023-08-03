@@ -3,9 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo!</title>
+    <link rel="icon" href="./public/favicon/favicon.png" />
+    <title>Notes!</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <script type="module" src="js/index.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet" />
   </head>
   <body>
-    <h1>Let's do it!</h1>
+    <div class="container">
+      <div class="notes-table">
+        <ul class="table-header">
+          <li class="table-header__item">Name</li>
+          <li class="table-header__item">Created</li>
+          <li class="table-header__item">Category</li>
+          <li class="table-header__item">Content</li>
+          <li class="table-header__item">Dates</li>
+          <li class="table-header__item table-header-icons">
+            <button class="toggle-archive-btn">
+              <span class="archive-toggle-text"></span>
+            </button>
+            <img
+              class="icon"
+              src="img/trash.svg"
+              alt="Trash icon"
+              width="30"
+              height="30" />
+          </li>
+        </ul>
+        <h1 class="archive-title isHidden">Archived Notes</h1>
+
+        <ul class="notes-list">
+          <!-- Todo -->
+        </ul>
+        <button class="create-note-btn">Create Note</button>
+      </div>
+
+      <div class="summary-notes-table">
+        <ul class="summary-table-header">
+          <li class="summary-table-header__item">Note Category</li>
+          <li class="summary-table-header__item">Active</li>
+          <li class="summary-table-header__item">Archived</li>
+        </ul>
+
+        <ul class="summary-notes-list">
+          <!-- Archived notes -->
+        </ul>
+      </div>
+
+      <div class="backdrop isHidden">
+        <div class="modal">
+          <button class="close-modal-btn">✕</button>
+          <form class="note-form">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name of your note.  Max 80 symbols"
+              required
+              maxlength="80" />
+            <span class="error-message"></span>
+            <textarea
+              name="content"
+              rows="3"
+              placeholder="Write you note. Max 120 symbols. Date format is: MM/DD/YYYY "
+              required
+              maxlength="120"></textarea>
+            <span class="error-message"></span>
+
+            <select name="category" required>
+              <option value="">Choose a category</option>
+              <option value="Task">Task</option>
+              <option value="Random Thought">Random Thought</option>
+              <option value="Idea">Idea</option>
+            </select>
+            <button type="submit">Add note</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
