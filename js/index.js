@@ -67,7 +67,6 @@ const init = async () => {
 };
 
 const noteForm = document.querySelector('.note-form');
-
 noteForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -85,8 +84,6 @@ noteForm.addEventListener('submit', (e) => {
   updateNotes(notes);
   noteForm.reset();
 });
-
-const notesList = document.querySelector('.notes-list');
 
 const actionHandlers = {
   'note-delete': (notes, noteId) => deleteNote(notes, noteId),
@@ -106,6 +103,7 @@ const actionHandlers = {
   },
 };
 
+const notesList = document.querySelector('.notes-list');
 notesList.addEventListener('click', (e) => {
   const noteItem = e.target.closest('.note-list-item');
   if (!noteItem) return;
