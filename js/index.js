@@ -10,6 +10,7 @@ import { closeModal, openModal } from './ui/modal.js';
 import { showArchivedNotes } from './ui/showArchivedNotes.js';
 import { updateArchiveButtonState } from './ui/updateArchiveButtonState.js';
 import { updateArchiveIconsState } from './ui/updateArchiveIconsState.js';
+import { validateForm } from './ui/validateForm.js';
 import { countNotesByCategory } from './utils/countNotesByCategory.js';
 import { fillNoteForm } from './utils/fillNoteForm.js';
 import { filterActiveNotes } from './utils/filterActiveNotes.js';
@@ -63,8 +64,11 @@ const init = async () => {
 };
 
 const noteForm = document.querySelector('.note-form');
+
 noteForm.addEventListener('submit', (e) => {
   e.preventDefault();
+
+  if (!validateForm(e.target)) return;
 
   const formData = new FormData(e.target);
 
@@ -76,6 +80,7 @@ noteForm.addEventListener('submit', (e) => {
   }
 
   updateNotes(notes);
+  noteForm.reset();
 });
 
 const notesList = document.querySelector('.notes-list');

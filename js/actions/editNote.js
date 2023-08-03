@@ -6,8 +6,6 @@ export const editNote = (notes, editingNoteId, formData) => {
   const contentData = formData.get('content').trim();
   const name = formData.get('name').trim();
 
-  if (!name || !contentData) return;
-
   const updatedNoteData = {
     name,
     content: extractContent(contentData),

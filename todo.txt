@@ -1,9 +1,0 @@
-1. Change archive icon color while in editing mode - Done
-2. Change archive icon color if in editing mode - Done
-
-3. Add feedback in form
-4. Add table names
-5. Improve font sizes
-6. Files to folders
-7. Reexport
-8. Add badge

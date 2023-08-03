@@ -52,6 +52,6 @@
 
 .close-modal-btn:hover {
   transform: rotate(50%);
-  border-color: gray;
-  color: gray;
+  border-color: rgb(0, 100, 139);
+  color: rgb(0, 100, 139);
 }
