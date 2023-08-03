@@ -1,5 +1,5 @@
-import { icons } from './constants/icons.js';
-import { getIconName } from './utils/getIconName.js';
+import { icons } from '../constants/icons.js';
+import { getIconName } from '../utils/getIconName.js';
 
 export const renderNotes = (notes) => {
   const notesList = document.querySelector('.notes-list');

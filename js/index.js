@@ -3,8 +3,8 @@ import { addNote } from './actions/addNote.js';
 import { archiveNote } from './actions/archiveNote.js';
 import { deleteNote } from './actions/deleteNote.js';
 import { editNote } from './actions/editNote.js';
-import { renderNotes } from './renderNotes.js';
-import { renderSummaryTable } from './renderSummaryTable.js';
+import { renderNotes } from './render/renderNotes.js';
+import { renderSummaryTable } from './render/renderSummaryTable.js';
 import { addArchiveIcon } from './ui/addArchiveIcon.js';
 import { closeModal, openModal } from './ui/modal.js';
 import { showArchivedNotes } from './ui/showArchivedNotes.js';
@@ -90,12 +90,18 @@ const notesList = document.querySelector('.notes-list');
 
 const actionHandlers = {
   'note-delete': (notes, noteId) => deleteNote(notes, noteId),
+
   'note-archive': (notes, noteId) => archiveNote(notes, noteId),
+
   'note-edit': (notes, noteId) => {
     editingNoteId = noteId;
+
     const note = findNoteById(notes, editingNoteId);
+
     fillNoteForm(note);
+
     openModal();
+
     return notes;
   },
 };

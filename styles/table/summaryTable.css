@@ -3,16 +3,16 @@
 }
 
 .summary-notes-list {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .summary-list-item {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   background-color: aliceblue;
   margin-bottom: 0.5rem;
-  border-radius: 2px;
+  border-radius: 0.2rem;
   padding: 1rem;
   width: 100%;
 }

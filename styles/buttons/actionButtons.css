@@ -1,7 +1,7 @@
 .note-button {
-  flex-basis: 30px;
-  min-width: 30px;
-  max-height: 30px;
+  flex-basis: 3rem;
+  min-width: 3rem;
+  max-height: 3rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -37,8 +37,8 @@
 }
 
 .toggle-archive-btn .ionicon {
-  min-width: 30px;
-  min-height: 30px;
+  min-width: 3rem;
+  min-height: 3rem;
 }
 
 .toggle-archive-btn:hover {

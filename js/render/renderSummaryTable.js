@@ -1,4 +1,4 @@
-import { getIconName } from './utils/getIconName.js';
+import { getIconName } from '../utils/getIconName.js';
 
 const categories = ['Task', 'Random Thought', 'Idea'];
 

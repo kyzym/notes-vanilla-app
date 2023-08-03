@@ -1,6 +1,6 @@
 import { filterArchivedNotes } from '../utils/filterArchivedNotes.js';
 import { filterActiveNotes } from '../utils/filterActiveNotes.js';
-import { renderNotes } from '../renderNotes.js';
+import { renderNotes } from '../render/renderNotes.js';
 import { updateArchiveToggleText } from '../utils/toggleArchiveText.js';
 
 export const showArchivedNotes = (notes, showArchived) => {
