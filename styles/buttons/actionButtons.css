@@ -28,3 +28,23 @@
   background-color: rgb(0, 100, 139);
   color: white;
 }
+
+.toggle-archive-btn {
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.toggle-archive-btn .ionicon {
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.toggle-archive-btn:hover {
+  color: rgb(0, 100, 139);
+}
+
+.archived {
+  color: rgb(0, 100, 139);
+}

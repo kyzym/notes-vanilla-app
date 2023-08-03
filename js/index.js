@@ -5,8 +5,11 @@ import { deleteNote } from './actions/deleteNote.js';
 import { editNote } from './actions/editNote.js';
 import { renderNotes } from './renderNotes.js';
 import { renderSummaryTable } from './renderSummaryTable.js';
+import { addArchiveIcon } from './ui/addArchiveIcon.js';
 import { closeModal, openModal } from './ui/modal.js';
 import { showArchivedNotes } from './ui/showArchivedNotes.js';
+import { updateArchiveButtonState } from './ui/updateArchiveButtonState.js';
+import { updateArchiveIconsState } from './ui/updateArchiveIconsState.js';
 import { countNotesByCategory } from './utils/countNotesByCategory.js';
 import { fillNoteForm } from './utils/fillNoteForm.js';
 import { filterActiveNotes } from './utils/filterActiveNotes.js';
@@ -39,9 +42,12 @@ const updateNotes = (updatedNotes) => {
   renderSummaryTable(counts);
 
   updateArchiveToggleText(notes, showArchived);
+  updateArchiveButtonState(showArchived);
 };
 
 const init = async () => {
+  addArchiveIcon();
+
   try {
     notes = await fetchData();
 
@@ -108,6 +114,9 @@ createNoteBtn.addEventListener('click', openModal);
 const toggleArchiveButton = document.querySelector('.toggle-archive-btn');
 toggleArchiveButton.addEventListener('click', () => {
   showArchived = showArchivedNotes(notes, showArchived);
+
+  updateArchiveButtonState(showArchived);
+  updateArchiveIconsState(showArchived);
 });
 
 init();

@@ -38,6 +38,17 @@
 
 .table-header-icons {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+
+  flex-wrap: nowrap;
+  gap: 0.8rem;
+}
+
+.table-header-icons .ionicon {
+  width: 30px;
 }
 
 .archive-toggle-text {
@@ -45,6 +56,6 @@
   font-weight: bold;
 }
 
-.table-header .table-header__item:first-child {
-  margin-left: 30%;
+.table-header__item:first-child {
+  margin-left: 4.5rem;
 }
