@@ -8,6 +8,7 @@ import { renderSummaryTable } from './renderSummaryTable.js';
 import { addArchiveIcon } from './ui/addArchiveIcon.js';
 import { closeModal, openModal } from './ui/modal.js';
 import { showArchivedNotes } from './ui/showArchivedNotes.js';
+import { toggleArchiveTitle } from './ui/toggleArchiveTitle.js';
 import { updateArchiveButtonState } from './ui/updateArchiveButtonState.js';
 import { updateArchiveIconsState } from './ui/updateArchiveIconsState.js';
 import { validateForm } from './ui/validateForm.js';
@@ -44,10 +45,12 @@ const updateNotes = (updatedNotes) => {
 
   updateArchiveToggleText(notes, showArchived);
   updateArchiveButtonState(showArchived);
+  toggleArchiveTitle(showArchived);
 };
 
 const init = async () => {
   addArchiveIcon();
+  toggleArchiveTitle(showArchived);
 
   try {
     notes = await fetchData();
@@ -122,6 +125,7 @@ toggleArchiveButton.addEventListener('click', () => {
 
   updateArchiveButtonState(showArchived);
   updateArchiveIconsState(showArchived);
+  toggleArchiveTitle(showArchived);
 });
 
 init();

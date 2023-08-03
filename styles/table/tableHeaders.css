@@ -59,3 +59,14 @@
 .table-header__item:first-child {
   margin-left: 4.5rem;
 }
+
+.archive-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.isHidden {
+  display: none;
+}
