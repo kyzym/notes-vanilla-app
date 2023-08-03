@@ -1,5 +1,6 @@
 const backdrop = document.querySelector('.backdrop');
 const closeModalBtn = document.querySelector('.close-modal-btn');
+const noteForm = document.querySelector('.note-form');
 
 export const openModal = () => {
   backdrop.classList.remove('isHidden');
@@ -13,6 +14,8 @@ export const openModal = () => {
 
 export const closeModal = () => {
   backdrop.classList.add('isHidden');
+
+  noteForm.reset();
 
   document.removeEventListener('keydown', handleEscapePress);
 

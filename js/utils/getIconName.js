@@ -1,12 +1,14 @@
+import { icons } from '../constants/icons.js';
+
 export const getIconName = (category) => {
   switch (category) {
     case 'Task':
-      return 'cart';
+      return icons.cart;
     case 'Random Thought':
-      return 'cloud-circle';
+      return icons.idea;
     case 'Idea':
-      return 'bulb';
+      return icons.bulb;
     default:
-      return 'bulb';
+      return icons.bulb;
   }
 };

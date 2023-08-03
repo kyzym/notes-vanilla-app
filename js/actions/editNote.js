@@ -3,10 +3,13 @@ import { extractDates } from '../utils/extractDates.js';
 import { updateNote } from '../utils/updateNote.js';
 
 export const editNote = (notes, editingNoteId, formData) => {
-  const contentData = formData.get('content');
+  const contentData = formData.get('content').trim();
+  const name = formData.get('name').trim();
+
+  if (!name || !contentData) return;
 
   const updatedNoteData = {
-    name: formData.get('name'),
+    name,
     content: extractContent(contentData),
     category: formData.get('category'),
     dates: extractDates(contentData),

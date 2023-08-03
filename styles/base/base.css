@@ -5,6 +5,7 @@ html {
 button {
   cursor: pointer;
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;

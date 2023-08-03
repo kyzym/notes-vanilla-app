@@ -16,10 +16,9 @@ export const renderSummaryTable = (counts) => {
 
     const noteContent = `
       <div class="summary-list-content note-name">
-        <img class="note-name-img" src="img/${getIconName(
-          category
-        )}.svg" alt="${category} icon" width="25" height="25">
-
+       <div class="note-name-icon-wrapper">
+       ${getIconName(category)}
+        </div>
         <span>${category}</span>
       </div>
       <span class="summary-list-content  note-active">${

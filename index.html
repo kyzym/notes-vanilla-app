@@ -22,22 +22,22 @@
           <li class="table-header__item">Category</li>
           <li class="table-header__item">Content</li>
           <li class="table-header__item">Dates</li>
-          <li class="table-header__item">
+          <li class="table-header__item table-header-icons">
             <button class="toggle-archive-btn">
               <span class="archive-toggle-text"></span>
               <img
                 class="icon"
                 src="img/archive.svg"
                 alt="Archive icon"
-                width="25"
-                height="25" />
+                width="30"
+                height="30" />
             </button>
             <img
               class="icon"
               src="img/trash.svg"
               alt="Trash icon"
-              width="25"
-              height="25" />
+              width="30"
+              height="30" />
           </li>
         </ul>
         <ul class="notes-list">
@@ -59,14 +59,20 @@
 
       <div class="backdrop isHidden">
         <div class="modal">
-          <button class="close-modal-btn">Close</button>
+          <button class="close-modal-btn">✕</button>
           <form class="note-form">
-            <input type="text" name="name" placeholder="Note name" required />
+            <input
+              type="text"
+              name="name"
+              placeholder="Name of your note.  Max 80 symbols"
+              required
+              maxlength="80" />
             <textarea
               name="content"
               rows="3"
-              placeholder="Note content"
-              required></textarea>
+              placeholder="Write you note. Max 120 symbols. Date format is: MM/DD/YYYY "
+              required
+              maxlength="120"></textarea>
 
             <select name="category" required>
               <option value="">Choose a category</option>

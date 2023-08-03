@@ -1,18 +1,18 @@
+.summary-notes-table {
+  margin-top: 10rem;
+}
+
 .summary-notes-list {
   font-size: 1.6rem;
 }
 
 .summary-list-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   background-color: aliceblue;
   margin-bottom: 0.5rem;
   border-radius: 2px;
   padding: 1rem;
-  column-gap: 1rem;
-  max-height: fit-content;
-}
-.summary-list-content {
-  flex-basis: 30%;
+  width: 100%;
 }

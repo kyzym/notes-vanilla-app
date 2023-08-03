@@ -26,4 +26,32 @@
   border-radius: 10px;
   width: 700px;
   padding: 36px;
+  position: relative;
+}
+
+.close-modal-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+
+  background-color: transparent;
+  border: 1.5px solid #000;
+  font-size: 1.5rem;
+  color: black;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.close-modal-btn:hover {
+  transform: rotate(50%);
+  border-color: gray;
+  color: gray;
 }

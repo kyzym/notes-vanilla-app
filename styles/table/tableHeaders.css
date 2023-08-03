@@ -16,7 +16,11 @@
   padding: 8px 8px 8px 8px;
   color: white;
 }
+
 .summary-table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
   margin-bottom: 16px;
   background-color: gray;
   border-radius: 4px;
@@ -24,14 +28,23 @@
   color: white;
 }
 
-.table-header,
-.summary-table-header {
-  display: flex;
-  gap: 16px;
-  justify-content: space-between;
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.table-header-icons {
+  margin-left: auto;
 }
 
 .archive-toggle-text {
   font-size: 0.6em;
   font-weight: bold;
+}
+
+.table-header .table-header__item:first-child {
+  margin-left: 30%;
 }

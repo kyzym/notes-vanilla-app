@@ -70,8 +70,6 @@ noteForm.addEventListener('submit', (e) => {
   }
 
   updateNotes(notes);
-
-  noteForm.reset();
 });
 
 const notesList = document.querySelector('.notes-list');

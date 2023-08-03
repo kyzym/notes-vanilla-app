@@ -1,10 +1,11 @@
 .notes-list {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .note-list-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
   align-items: center;
   background-color: aliceblue;
   margin-bottom: 0.5rem;
@@ -30,11 +31,15 @@
   min-width: 4rem;
   min-height: 4rem;
 
+  padding: 7px;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .note-actions {
-  flex-basis: 17%;
+  margin-left: auto;
+  display: flex;
+  gap: 0.8rem;
 }

@@ -1,3 +1,4 @@
+import { icons } from './constants/icons.js';
 import { getIconName } from './utils/getIconName.js';
 
 export const renderNotes = (notes) => {
@@ -12,9 +13,7 @@ export const renderNotes = (notes) => {
     const noteContent = `
       <div class="note-content note-name">
         <div class="note-name-icon-wrapper">
-          <img class="note-name-icon" src="img/${getIconName(
-            note.category
-          )}.svg" alt="Note icon" width="25" height="25">
+              ${getIconName(note.category)}
         </div>
         <span>${note.name}</span>
       </div>
@@ -23,14 +22,14 @@ export const renderNotes = (notes) => {
       <span class="note-content note-content">${note.content}</span>
       <span class="note-content note-dates">${note.dates.join(', ')}</span>
       <div class="note-actions">
-        <button type="button" class="note-edit">
-          <img src="img/pencil.svg" alt="Edit"  width="25" height="25">
+        <button type="button" class="note-button note-edit">
+          ${icons.pencil}
         </button>
-        <button type="button" class="note-archive">
-          <img src="img/archive.svg" alt="Archive" width="25" height="25">
+        <button type="button" class="note-button note-archive">
+          ${icons.archive}
         </button>
-        <button type="button" class="note-delete">
-          <img src="img/trash.svg" alt="Delete" width="25" height="25">
+        <button type="button" class="note-button note-delete">
+          ${icons.trash}
         </button>
       </div>
     `;
